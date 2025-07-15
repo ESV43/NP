@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam - Nuclear & Particle Physics</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            "HTML-CSS": {preferredFont: "TeX", availableFonts: ["STIX","TeX"]},
+            CommonHTML: { matchFontHeight: false }
+        });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <header>
+        <h1>Nuclear & Particle Physics Notes</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lectures.html">Lectures</a></li>
+            <li><a href="tutorial.html">Tutorial</a></li>
+            <li><a href="exam.html" class="active">Exam</a></li>
+            <li><a href="net_questions.html">CSIR NET Style Questions</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Nuclear & Particle Physics Exam (50 Marks)</h2>
+            <p><strong>Instructions:</strong> Answer all questions. Show all your work for mathematical problems. Conceptual answers should be clear and concise. You may refer to fundamental constants if needed (e.g., $c=3 \times 10^8 \text{ m/s}$, $\hbar = 1.054 \times 10^{-34} \text{ J s}$, $1 \text{ u} = 931.5 \text{ MeV/c}^2$, $m_p c^2 = 938.27 \text{ MeV}$, $m_n c^2 = 939.57 \text{ MeV}$, $m_e c^2 = 0.511 \text{ MeV}$).</p>
+
+            <div class="question-block">
+                <h4>Question 1: Rutherford Scattering and Nuclear Density (10 Marks)</h4>
+                <ol>
+                    <li>(4 Marks) Describe the key experimental observations of the Rutherford gold foil experiment that led to the rejection of the Thomson model and the proposal of the nuclear model of the atom. How did the angular distribution of scattered alpha particles provide critical evidence?</li>
+                    <li>(6 Marks) An electron of momentum $p$ is scattered elastically from a nucleus with a uniform charge distribution and radius $R$. The form factor is given by $F(q) = \frac{3}{(qR/\hbar)^3} \left\{\sin\left(\frac{qR}{\hbar}\right) - \left(\frac{qR}{\hbar}\right)\cos\left(\frac{qR}{\hbar}\right)\right\}$.
+                        <br>For small momentum transfer $q$, show that $F(q) \approx 1 - \frac{q^2 \langle r^2 \rangle}{6\hbar^2}$, where $\langle r^2 \rangle$ is the mean square charge radius. Calculate $\langle r^2 \rangle$ for this uniform charge distribution in terms of $R$.</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Rutherford Experiment Observations</strong></p>
+                    <ul>
+                        <li><strong>Observation 1 (Majority passing through)</strong>: Most alpha particles passed straight through the gold foil with little or no deflection.
+                            <ul>
+                                <li><strong>Implication</strong>: This suggested that atoms are mostly empty space, not a uniformly dense "plum pudding."</li>
+                            </ul>
+                        </li>
+                        <li><strong>Observation 2 (Small fraction large angle scattering)</strong>: A small fraction (about 1 in 8000) of alpha particles were deflected at very large angles, some even scattering backward (deflection > 90°).
+                            <ul>
+                                <li><strong>Implication</strong>: This was the most surprising observation. It indicated that the positive charge and nearly all the mass of the atom must be concentrated in a tiny, dense core (the nucleus). Only a direct hit or very close encounter with such a massive, charged core could cause such large deflections.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Angular Distribution Evidence</strong>: The Rutherford scattering formula for differential cross-section, $\frac{d\sigma}{d\Omega} \propto \sin^{-4}(\Theta/2)$, accurately predicted the observed angular distribution. This strong dependence on scattering angle, especially the sharp increase at small angles and non-zero probability at large angles, was directly consistent with scattering from a point-like, massive, charged nucleus, unlike the gentle deflections expected from Thomson's diffuse model.</p>
+
+                    <p><strong>Part (b): Form Factor and Mean Square Radius</strong></p>
+                    <p>Given the form factor for a uniform charge distribution:</p>
+                    $$ F(q) = \frac{3}{(qR/\hbar)^3} \left\{\sin\left(\frac{qR}{\hbar}\right) - \left(\frac{qR}{\hbar}\right)\cos\left(\frac{qR}{\hbar}\right)\right\} $$
+                    Let $x = qR/\hbar$.
+                    $$ F(q) = \frac{3}{x^3} \{\sin(x) - x\cos(x)\} $$
+                    For small $x$, we use Taylor series expansions:
+                    $$ \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \dots $$
+                    $$ \cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \dots $$
+                    Substitute these into $F(q)$:
+                    $$ F(q) = \frac{3}{x^3} \left\{ \left(x - \frac{x^3}{6} + \frac{x^5}{120} - \dots\right) - x\left(1 - \frac{x^2}{2} + \frac{x^4}{24} - \dots\right) \right\} $$
+                    $$ F(q) = \frac{3}{x^3} \left\{ x - \frac{x^3}{6} + \frac{x^5}{120} - x + \frac{x^3}{2} - \frac{x^5}{24} + \dots \right\} $$
+                    $$ F(q) = \frac{3}{x^3} \left\{ \left(-\frac{1}{6} + \frac{1}{2}\right)x^3 + \left(\frac{1}{120} - \frac{1}{24}\right)x^5 + \dots \right\} $$
+                    $$ F(q) = \frac{3}{x^3} \left\{ \frac{2}{6}x^3 - \frac{4}{120}x^5 + \dots \right\} $$
+                    $$ F(q) = 1 - \frac{4}{120} \times 3 x^2 + \dots = 1 - \frac{1}{10} x^2 + \dots $$
+                    Substitute back $x = qR/\hbar$:
+                    $$ F(q) \approx 1 - \frac{1}{10} \left(\frac{qR}{\hbar}\right)^2 = 1 - \frac{q^2 R^2}{10\hbar^2} $$
+                    We know the general expansion for small $q$ is $F(q) \approx 1 - \frac{q^2 \langle r^2 \rangle}{6\hbar^2}$.
+                    Comparing the two expressions, we have:
+                    $$ \frac{\langle r^2 \rangle}{6} = \frac{R^2}{10} $$
+                    $$ \langle r^2 \rangle = \frac{6R^2}{10} = \frac{3}{5}R^2 $$
+                    For a uniformly charged sphere of radius $R$, the mean square charge radius is $\langle r^2 \rangle = \frac{3}{5}R^2$.
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h4>Question 2: Semi-Empirical Mass Formula (10 Marks)</h4>
+                <p>The Semi-Empirical Mass Formula (SEMF) for the binding energy of a nucleus is given by:</p>
+                $$ BE(A,Z) = a_v A - a_s A^{2/3} - a_c \frac{Z(Z-1)}{A^{1/3}} - a_a \frac{(A-2Z)^2}{A} \pm a_p A^{-k} $$
+                <ol>
+                    <li>(4 Marks) Explain the physical origin of the 'asymmetry term' and the 'pairing term'. Why does the asymmetry term favor $N \approx Z$ for light nuclei but $N > Z$ for heavy nuclei?</li>
+                    <li>(6 Marks) Given a pair of mirror nuclei, $^{27}\text{Al}$ ($Z=13, N=14$) and $^{27}\text{Si}$ ($Z=14, N=13$). The difference in their binding energies is primarily due to the Coulomb term. Calculate the difference in Coulomb energy $\Delta E_C$ between these two nuclei, assuming $a_c = 0.71 \text{ MeV}$. What can this difference be used to determine?</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Asymmetry and Pairing Terms</strong></p>
+                    <p><strong>Asymmetry Term: $-a_a \frac{(A-2Z)^2}{A}$</strong></p>
+                    <p><strong>Physical Origin</strong>: This term arises from the Pauli Exclusion Principle for nucleons (fermions) and the observation that the nuclear force is short-ranged and saturates. Nucleons fill energy levels in the nuclear potential well. To minimize the total energy, it is energetically favorable to have roughly equal numbers of protons and neutrons (i.e., $N \approx Z$). If there is an imbalance ($N \ne Z$), the excess nucleons must occupy higher energy levels, leading to a reduction in the overall binding energy. The term $(A-2Z)^2 = (N-Z)^2$, so it penalizes deviations from $N=Z$. The $1/A$ factor reflects that the energy penalty per nucleon decreases for larger nuclei, as there are more available energy levels.</p>
+                    <p><strong>Why $N \approx Z$ for light nuclei and $N > Z$ for heavy nuclei?</strong></p>
+                    <ul>
+                        <li><strong>Light Nuclei ($N \approx Z$)</strong>: For light nuclei, the Coulomb repulsion between protons is relatively small. The asymmetry term dominates, favoring $N=Z$ because it allows both protons and neutrons to fill the lowest available energy states efficiently without unnecessary energy expenditure.</li>
+                        <li><strong>Heavy Nuclei ($N > Z$)</strong>: For heavy nuclei, the Coulomb repulsion term (proportional to $Z^2$) becomes increasingly significant. This repulsion destabilizes the nucleus. To compensate for this, more neutrons than protons are needed. Neutrons provide additional attractive strong force without contributing to the destabilizing Coulomb repulsion. Thus, the nucleus shifts towards a neutron-rich composition ($N > Z$) to maximize stability, even if it incurs some penalty from the asymmetry term. The overall effect is a compromise between the asymmetry term and the Coulomb term.</li>
+                    </ul>
+
+                    <p><strong>Pairing Term: $\pm a_p A^{-k}$</strong></p>
+                    <p><strong>Physical Origin</strong>: This term accounts for the tendency of nucleons to form pairs in the nucleus. Nucleons (protons or neutrons) with opposite spins in the same orbital are more strongly bound due to the attractive nature of the nuclear force. This effect leads to enhanced stability for nuclei where both proton and neutron numbers are even.</p>
+                    <ul>
+                        <li>$+a_p A^{-k}$ for Even-Even (EE) nuclei (even Z, even N): All nucleons are paired, leading to maximum stability.</li>
+                        <li>$0$ for Even-Odd (EO) or Odd-Even (OE) nuclei (one unpaired nucleon): Intermediate stability.</li>
+                        <li>$-a_p A^{-k}$ for Odd-Odd (OO) nuclei (both Z and N are odd): Two unpaired nucleons, leading to reduced stability.</li>
+                    </ul>
+
+                    <p><strong>Part (b): Coulomb Energy Difference for Mirror Nuclei</strong></p>
+                    <p>For mirror nuclei, the mass number $A$ is the same, and the number of protons in one is the number of neutrons in the other ($Z_1 = N_2$, $N_1 = Z_2$). The volume, surface, asymmetry, and pairing terms in SEMF are nearly identical for mirror nuclei (ignoring small corrections). Therefore, the difference in binding energy (and thus mass) is primarily due to the Coulomb term.</p>
+                    <p>The Coulomb term is $E_C = -a_c \frac{Z(Z-1)}{A^{1/3}}$.</p>
+                    <p>For $^{27}\text{Al}$ ($Z=13, N=14, A=27$):
+                        $E_C(\text{Al}) = -a_c \frac{13(13-1)}{27^{1/3}} = -a_c \frac{13 \times 12}{3} = -a_c (13 \times 4) = -52 a_c$
+                    </p>
+                    <p>For $^{27}\text{Si}$ ($Z=14, N=13, A=27$):
+                        $E_C(\text{Si}) = -a_c \frac{14(14-1)}{27^{1/3}} = -a_c \frac{14 \times 13}{3} = -a_c (14 \times 13/3) = -60.67 a_c$ (approximately, more accurately 182/3)
+                    </p>
+                    <p>Difference in Coulomb Energy $\Delta E_C = E_C(\text{Al}) - E_C(\text{Si})$:
+                        $$ \Delta E_C = (-52 a_c) - \left(-\frac{182}{3} a_c\right) = \left(-\frac{156}{3} + \frac{182}{3}\right) a_c = \frac{26}{3} a_c $$
+                    Given $a_c = 0.71 \text{ MeV}$:
+                    $$ \Delta E_C = \frac{26}{3} \times 0.71 \text{ MeV} \approx 8.67 \times 0.71 \text{ MeV} \approx 6.15 \text{ MeV} $$
+                    <p>The difference in Coulomb energy is approximately $6.15 \text{ MeV}$.</p>
+                    <p><strong>What can this difference be used to determine?</strong></p>
+                    <p>This difference in Coulomb energy between mirror nuclei can be accurately measured experimentally (e.g., from beta decay Q-values). Since other terms of SEMF cancel out, this experimental value can be directly used to determine the value of the Coulomb coefficient $a_c$ (or fine-tune its value) with high precision.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h4>Question 3: Nuclear Models & Collective Phenomena (10 Marks)</h4>
+                <ol>
+                    <li>(4 Marks) Compare and contrast the Infinite Spherical Well model and the 3D Isotropic Harmonic Oscillator model in explaining nuclear magic numbers. What are their successes and why do they ultimately fail to explain all magic numbers?</li>
+                    <li>(6 Marks) For Even-Even nuclei, the ground state is always $0^+$. However, low-lying excited states are often observed as $2^+$.
+                        <br>a. Explain how the nuclear shell model (without collective effects) struggles to explain this low-lying $2^+$ state.
+                        <br>b. Describe how the nuclear vibrational model explains this $2^+$ state and what would be the expected ratio $E(4^+)/E(2^+)$ for vibrational nuclei.</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Comparison of Infinite Spherical Well and 3D Harmonic Oscillator Models</strong></p>
+                    <p>Both models simplify the complex nucleon-nucleon interaction into an average central potential well in which nucleons move independently. They aim to explain nuclear shell structure and magic numbers based on filling these single-particle energy levels.</p>
+                    <ul>
+                        <li><strong>Infinite Spherical Well Model (Square Well)</strong>:
+                            <ul>
+                                <li><strong>Potential</strong>: $V(r) = 0$ for $r \le R$, $V(r) = \infty$ for $r > R$.</li>
+                                <li><strong>Energy Levels</strong>: Determined by zeros of spherical Bessel functions, quantized by principal quantum number $n$ and orbital angular momentum $l$. Energy generally increases with $n$ and $l$.</li>
+                                <li><strong>Successes</strong>: Predicts the first few magic numbers (2, 8, 20).</li>
+                                <li><strong>Failures</strong>: Fails to predict higher magic numbers (28, 50, 82, 126). The energy gaps at higher nucleon numbers are not sufficiently large or are misplaced compared to experimental observations.</li>
+                            </ul>
+                        </li>
+                        <li><strong>3D Isotropic Harmonic Oscillator Model</strong>:
+                            <ul>
+                                <li><strong>Potential</strong>: $V(r) = \frac{1}{2}m\omega^2 r^2$.</li>
+                                <li><strong>Energy Levels</strong>: $E_N = \hbar\omega(N + 3/2)$, where $N = 2(n-1) + l$. All states with the same $N$ are degenerate.</li>
+                                <li><strong>Successes</strong>: Also predicts the first few magic numbers (2, 8, 20). Provides a clearer theoretical framework for level degeneracy based on $N$.</li>
+                                <li><strong>Failures</strong>: Like the square well, it fails for higher magic numbers. For example, it predicts a shell closure at 40 (N=3 shell, $2p+1f$ states) instead of 28 or 50. This indicates that the simple energy spacing and degeneracies predicted by these potentials are insufficient.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Reason for Failure</strong>: Both models are oversimplifications that neglect the crucial **spin-orbit coupling** interaction. This interaction significantly shifts the energy levels of states with high orbital angular momentum, leading to different energy ordering and creating the actual large energy gaps observed at the higher magic numbers (28, 50, 82, 126).</p>
+
+                    <p><strong>Part (b): Low-lying $2^+$ state in Even-Even Nuclei</strong></p>
+                    <p><strong>a. Shell Model Struggles</strong>:</p>
+                    <p>In the extreme single-particle shell model, Even-Even nuclei have all their nucleons paired up in the ground state. This results in a total angular momentum of $0$ and positive parity ($0^+$). To excite such a nucleus to a $2^+$ state, a nucleon would typically need to be promoted from one shell to a higher shell, breaking a pair. This requires a significant amount of energy (on the order of $\hbar\omega$, i.e., several MeV), which is inconsistent with the experimentally observed low-lying (tens or hundreds of keV to 1 MeV) $2^+$ states. The shell model, in its simplest form, cannot account for these collective excitations.</p>
+
+                    <p><strong>b. Nuclear Vibrational Model Explanation</strong>:</p>
+                    <p>The nuclear vibrational model describes nuclei, particularly those that are nearly spherical, as undergoing oscillations of their surface shape around an equilibrium sphere. These oscillations are quantized into "phonons." The low-lying $2^+$ state in Even-Even nuclei is interpreted as the excitation of the ground state ($0^+$) by a single quadrupole phonon ($\lambda=2$). A quadrupole phonon carries 2 units of angular momentum and positive parity. Thus, adding one such phonon to a $0^+$ ground state yields a $2^+$ excited state.</p>
+                    <p><strong>Expected Ratio $E(4^+)/E(2^+)$ for Vibrational Nuclei</strong>:</p>
+                    <p>In the vibrational model, the energy levels are approximately equally spaced, corresponding to multiples of the phonon energy ($\hbar\omega_v$).</p>
+                    <ul>
+                        <li>Ground state: $0^+$ (0 phonons) - Energy $E_0$</li>
+                        <li>First excited state: $2^+$ (1 phonon) - Energy $E_0 + 1\hbar\omega_v$</li>
+                        <li>Second excited states (two-phonon multiplet): $0^+, 2^+, 4^+$ (2 phonons) - Energy $E_0 + 2\hbar\omega_v$</li>
+                    </ul>
+                    <p>So, the energy of the first $2^+$ state is $E(2^+) \approx \hbar\omega_v$.</p>
+                    <p>The energy of the $4^+$ state (which is a two-phonon state) is $E(4^+) \approx 2\hbar\omega_v$.</p>
+                    <p>Therefore, the expected ratio $E(4^+)/E(2^+)$ for vibrational nuclei is:</p>
+                    $$ \frac{E(4^+)}{E(2^+)} = \frac{2\hbar\omega_v}{\hbar\omega_v} = 2 $$
+                    <p>This ratio of 2 is a characteristic signature of vibrational nuclei and is observed experimentally for nuclei with mass numbers $A < 150$ and some around $A \approx 190-200$.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h4>Question 4: Nuclear Force & Deuteron (10 Marks)</h4>
+                <ol>
+                    <li>(4 Marks) List and briefly explain four key characteristics of the nuclear force that distinguish it from the electromagnetic and gravitational forces.</li>
+                    <li>(6 Marks) The deuteron ($^2_1\text{H}$) has a ground state spin-parity of $1^+$ and a small but non-zero electric quadrupole moment. Explain how these two experimental observations provide evidence for the nature of the nuclear force, specifically regarding its spin-dependence and non-central character.</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Key Characteristics of Nuclear Force</strong></p>
+                    <ol>
+                        <li><strong>Short-Range</strong>: Unlike the infinite range of electromagnetic and gravitational forces, the nuclear force acts only over very small distances, typically less than a few femtometers ($\sim 2 \text{ fm}$). Beyond this range, its strength drops rapidly to negligible values.</li>
+                        <li><strong>Strong (Dominant at short range)</strong>: At distances within its range, the nuclear force is much stronger than the electromagnetic repulsion between protons. This immense strength is necessary to overcome Coulomb repulsion and bind the nucleus together.</li>
+                        <li><strong>Saturating (Not simply additive)</strong>: The nuclear force exhibits saturation, meaning that each nucleon interacts strongly only with a limited number of its nearest neighbors, rather than with all other nucleons in the nucleus. This explains why the binding energy per nucleon (BE/A) is nearly constant for most nuclei, unlike gravitational or electromagnetic forces whose energies would increase quadratically with particle number if they did not saturate.</li>
+                        <li><strong>Charge Independent</strong>: The strong nuclear force between any two nucleons is approximately the same, regardless of their charge (i.e., proton-proton, neutron-neutron, and proton-neutron interactions are similar in strength, ignoring electromagnetic effects). This is a manifestation of isospin symmetry.</li>
+                        <li><strong>Spin-Dependent</strong>: The strength of the nuclear force depends on the relative orientation of the spins of the interacting nucleons. For example, the deuteron (a proton and a neutron) is only bound if their spins are aligned (total spin S=1), demonstrating a preference for certain spin configurations. (Can list any four from this list: short-range, strong, saturating, charge independent, spin-dependent, non-central).</li>
+                    </ol>
+
+                    <p><strong>Part (b): Deuteron Properties as Evidence for Nuclear Force</strong></p>
+                    <p>The deuteron is the simplest bound nucleus (one proton and one neutron), making it an ideal system to study the nucleon-nucleon interaction.</p>
+                    <p><strong>1. Ground State Spin-Parity of $1^+$</strong>:</p>
+                    <ul>
+                        <li>The deuteron's observed spin-parity of $1^+$ is strong evidence for the <strong>spin-dependence</strong> of the nuclear force.</li>
+                        <li>A proton and a neutron each have spin $1/2$. They can couple to form a total spin $S=0$ (singlet) or $S=1$ (triplet).</li>
+                        <li>In the lowest energy (ground) state, one would expect the orbital angular momentum $l=0$ (S-wave), as this typically corresponds to the deepest binding. If $l=0$ and $S=0$, the total spin is $I=0^+$. If $l=0$ and $S=1$, the total spin is $I=1^+$.</li>
+                        <li>The fact that the observed ground state is $1^+$ indicates that the nuclear force preferentially binds nucleons when their spins are aligned (triplet state, $S=1$). This demonstrates that the nuclear force is not merely a central force; it has a significant spin-dependent component.</li>
+                    </ul>
+
+                    <p><strong>2. Non-zero Electric Quadrupole Moment</strong>:</p>
+                    <ul>
+                        <li>The deuteron's non-zero electric quadrupole moment indicates that its charge distribution is not perfectly spherical; it is slightly elongated (prolate spheroid).</li>
+                        <li>In a pure $l=0$ (S-wave) state, the charge distribution would be spherically symmetric, and the quadrupole moment would be zero.</li>
+                        <li>The non-zero quadrupole moment implies that the deuteron's wave function must contain an admixture of states with higher orbital angular momentum, specifically an $l=2$ (D-wave) component.</li>
+                        <li>Since the observed ground state has $I=1^+$, the $l=2$ component must also couple to $S=1$ to achieve $I=1^+$ (vector addition of $l=2$ and $S=1$ can give $J=1$).</li>
+                        <li>This admixture of an $l=2$ state into the predominantly $l=0$ ground state is direct evidence for the <strong>non-central (tensor) character</strong> of the nuclear force. A purely central force would only allow pure $l$ states for a given energy. The tensor force mixes states of different $l$ values (but same parity and total $J$), leading to the observed deformation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h4>Question 5: Particle Physics & Conservation Laws (10 Marks)</h4>
+                <p>For each of the following hypothetical decay or reaction processes, determine if it is allowed or forbidden by the fundamental conservation laws. If forbidden, identify the violated conservation law(s). Assume no other particles are involved beyond what is explicitly listed.</p>
+                <p>($\text{Relevant Quantum Numbers: } L_e, L_\mu, L_\tau, B, S, I_3$)</p>
+                <ol>
+                    <li>(2 Marks) $\mu^- \rightarrow e^- + \gamma$</li>
+                    <li>(2 Marks) $p^+ \rightarrow n^0 + e^+$</li>
+                    <li>(2 Marks) $n^0 \rightarrow p^+ + e^- + \nu_e$</li>
+                    <li>(2 Marks) $\pi^- + p^+ \rightarrow K^0 + \Lambda^0$</li>
+                    <li>(2 Marks) $K^+ \rightarrow \pi^+ + \pi^0$</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p>To determine if a process is allowed or forbidden, we check the conservation of relevant quantum numbers: electric charge (Q), baryon number (B), lepton number (L, $L_e, L_\mu, L_\tau$), strangeness (S), and isospin's third component ($I_3$).</p>
+                    <p><strong>1. $\mu^- \rightarrow e^- + \gamma$</strong></p>
+                    <ul>
+                        <li><strong>Q:</strong> $-1 \rightarrow -1 + 0$ (Conserved)</li>
+                        <li><strong>B:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>$L_e$:</strong> $0 \rightarrow 1 + 0$ (Violated)</li>
+                        <li><strong>$L_\mu$:</strong> $1 \rightarrow 0 + 0$ (Violated)</li>
+                        <li><strong>S:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                    </ul>
+                    <p><strong>Status: FORBIDDEN. Violates muon lepton number ($L_\mu$) and electron lepton number ($L_e$) conservation.</strong> This process would convert a muon directly into an electron, which is not observed. The actual decay is $\mu^- \rightarrow e^- + \bar{\nu}_e + \nu_\mu$.</p>
+
+                    <p><strong>2. $p^+ \rightarrow n^0 + e^+$</strong></p>
+                    <ul>
+                        <li><strong>Q:</strong> $+1 \rightarrow 0 + 1$ (Conserved)</li>
+                        <li><strong>B:</strong> $1 \rightarrow 1 + 0$ (Conserved)</li>
+                        <li><strong>$L_e$:</strong> $0 \rightarrow 0 + (-1)$ (Violated) - positron is an anti-electron, so $L_e=-1$.</li>
+                        <li><strong>$L_\mu$:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>S:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                    </ul>
+                    <p><strong>Status: FORBIDDEN. Violates electron lepton number ($L_e$) conservation.</strong> This is a hypothetical proton decay (without a neutrino), which is forbidden by lepton number conservation. Also, for a free proton, it's forbidden by energy conservation ($m_p < m_n + m_{e^+}$).</p>
+
+                    <p><strong>3. $n^0 \rightarrow p^+ + e^- + \nu_e$</strong></p>
+                    <ul>
+                        <li><strong>Q:</strong> $0 \rightarrow +1 + (-1) + 0$ (Conserved)</li>
+                        <li><strong>B:</strong> $1 \rightarrow 1 + 0 + 0$ (Conserved)</li>
+                        <li><strong>$L_e$:</strong> $0 \rightarrow 0 + 1 + (-1)$ (Conserved)</li>
+                        <li><strong>$L_\mu$:</strong> $0 \rightarrow 0 + 0 + 0$ (Conserved)</li>
+                        <li><strong>S:</strong> $0 \rightarrow 0 + 0 + 0$ (Conserved)</li>
+                    </ul>
+                    <p><strong>Status: ALLOWED.</strong> This is the $\beta^-$ decay of a free neutron, mediated by the weak interaction. It is energetically allowed ($Q > 0$).</p>
+
+                    <p><strong>4. $\pi^- + p^+ \rightarrow K^0 + \Lambda^0$</strong></p>
+                    <ul>
+                        <li><strong>Q:</strong> $-1 + 1 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>B:</strong> $0 + 1 \rightarrow 0 + 1$ (Conserved)</li>
+                        <li><strong>$L$:</strong> $0 + 0 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>S:</strong> $0 + 0 \rightarrow +1 + (-1)$ (Conserved) - $K^0$ has $S=+1$, $\Lambda^0$ has $S=-1$.</li>
+                        <li><strong>$I_3$:</strong> $0 + 1/2 \rightarrow -1/2 + 0$ (Violated) - $\pi^-: I_3=-1$, $p^+: I_3=1/2$. $K^0: I_3=-1/2$, $\Lambda^0: I_3=0$. So, initial $I_3 = -1+1/2 = -1/2$. Final $I_3 = -1/2+0 = -1/2$. (Conserved).</li>
+                    </ul>
+                    <p><strong>Status: ALLOWED.</strong> This is an example of "associated production" of strange particles via the strong interaction. All fundamental quantum numbers are conserved, including strangeness. Isospin ($I$) is not necessarily conserved, but $I_3$ is conserved in strong interactions.</p>
+
+                    <p><strong>5. $K^+ \rightarrow \pi^+ + \pi^0$</strong></p>
+                    <ul>
+                        <li><strong>Q:</strong> $+1 \rightarrow +1 + 0$ (Conserved)</li>
+                        <li><strong>B:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>$L$:</strong> $0 \rightarrow 0 + 0$ (Conserved)</li>
+                        <li><strong>S:</strong> $+1 \rightarrow 0 + 0$ (Violated) - $K^+$ has $S=+1$, pions have $S=0$.</li>
+                    </ul>
+                    <p><strong>Status: FORBIDDEN by strong interaction, but ALLOWED by weak interaction. Violates strangeness conservation.</strong> Since strangeness is violated ($\Delta S = -1$), this decay proceeds via the weak interaction. This is why Kaons have relatively long lifetimes despite being hadrons.</p>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <h4>Question 6: Alpha Decay & Gamow's Theory (10 Marks)</h4>
+                <p>Consider the alpha decay of a heavy nucleus. The half-life of an alpha emitter is extremely sensitive to the alpha particle's kinetic energy ($Q$-value).</p>
+                <ol>
+                    <li>(4 Marks) Qualitatively explain, using the concept of quantum tunneling, why a small change in the alpha particle's kinetic energy leads to a huge change in the half-life.</li>
+                    <li>(6 Marks) If an alpha particle needs to tunnel through a rectangular potential barrier of height $V_0$ and width $L$, its tunneling probability is approximately $P \propto e^{-2kL}$, where $k = \frac{\sqrt{2m(V_0-E)}}{\hbar}$.
+                        <br>For an alpha emitter with $Q=5 \text{ MeV}$, if its half-life is $10^9$ years, estimate its half-life if the $Q$-value were $5.1 \text{ MeV}$, assuming other parameters remain constant. Consider $V_0 - E \approx 20 \text{ MeV}$ as an effective barrier height above the alpha particle's energy for the purpose of the exponential factor. (Approximate $\ln(2) \approx 0.7$, $m_\alpha \approx 4 \text{ u}$).</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Qualitative Explanation of Half-life Sensitivity</strong></p>
+                    <p>Alpha decay is explained by Gamow's theory as a quantum tunneling phenomenon. An alpha particle inside the nucleus is trapped by the strong nuclear force, but it faces a Coulomb potential barrier created by the repulsive electrostatic force from the remaining protons. The alpha particle's kinetic energy (Q-value) is typically less than the height of this Coulomb barrier.</p>
+                    <p>Classically, the alpha particle would not be able to escape. However, quantum mechanically, there is a non-zero probability for the alpha particle to "tunnel" through this barrier. The tunneling probability ($P$) is exquisitely sensitive to three main factors:</p>
+                    <ol>
+                        <li><strong>Barrier Height ($V_0 - Q$)</strong>: A higher barrier height significantly reduces the tunneling probability.</li>
+                        <li><strong>Barrier Width ($L$)</strong>: A wider barrier dramatically reduces the tunneling probability.</li>
+                        <li><strong>Particle's Kinetic Energy ($Q$)</strong>: This is the key. A small increase in the alpha particle's kinetic energy ($Q$-value) means the alpha particle is effectively starting from a higher energy level relative to the barrier.
+                            <ul>
+                                <li>It reduces the "effective height" of the barrier that the particle needs to tunnel through ($V_0 - Q$).</li>
+                                <li>It also reduces the "effective width" of the barrier (the classical turning point moves closer to the nuclear radius).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>The tunneling probability ($P$) depends exponentially on the product of a factor related to $\sqrt{V_0 - Q}$ and the barrier width. Because this dependence is exponential, even a small linear change in $Q$ leads to a very large multiplicative change in $P$. Since the decay constant $\lambda \propto P$, and half-life $t_{1/2} \propto 1/\lambda$, a small increase in $Q$ results in a dramatically increased tunneling probability, a much larger decay constant, and therefore a drastically shorter half-life. This exponential sensitivity is the essence of the Geiger-Nuttall law.</p>
+
+                    <p><strong>Part (b): Half-life Calculation</strong></p>
+                    <p>The decay constant $\lambda \propto P \propto e^{-2kL}$, where $k = \frac{\sqrt{2m(V_0-E)}}{\hbar}$.
+                    So, $\ln \lambda = \text{constant} - \frac{2L}{\hbar}\sqrt{2m(V_0-E)}$.
+                    Since $t_{1/2} = \ln 2 / \lambda$:
+                    $$ \ln t_{1/2} = C_1 + C_2 \sqrt{V_0-Q} $$
+                    where $C_1 = \ln(\ln 2) - \ln(\text{assault frequency})$ and $C_2 = \frac{2L\sqrt{2m}}{\hbar}$.
+
+                    Let $Q_1 = 5 \text{ MeV}$ and $t_{1/2,1} = 10^9 \text{ years}$.
+                    Let $Q_2 = 5.1 \text{ MeV}$.
+                    We are given $V_0 - Q_1 = 20 \text{ MeV}$. So, $V_0 - Q_2 = 20 - (5.1-5.0) = 19.9 \text{ MeV}$.
+
+                    From the relationship:
+                    $$ \ln t_{1/2,1} = C_1 + C_2 \sqrt{V_0-Q_1} $$
+                    $$ \ln t_{1/2,2} = C_1 + C_2 \sqrt{V_0-Q_2} $$
+                    Subtracting the two equations:
+                    $$ \ln t_{1/2,2} - \ln t_{1/2,1} = C_2 (\sqrt{V_0-Q_2} - \sqrt{V_0-Q_1}) $$
+                    $$ \ln\left(\frac{t_{1/2,2}}{t_{1/2,1}}\right) = C_2 (\sqrt{19.9} - \sqrt{20}) $$
+
+                    To find $C_2$: The Gamow factor $G = \frac{1}{\hbar} \int_R^b \sqrt{2m_\alpha(V_c(r)-Q)} dr$.
+                    A rough estimate from lecture notes for $G$ for typical alpha decay $Q \sim 5 \text{ MeV}$ and $t_{1/2} \sim 10^{10}$ years gives $2G \approx 39$.
+                    So, $\ln \lambda \approx \ln f - 2G$. Using $\ln t_{1/2} \approx -\ln \lambda$:
+                    $\ln t_{1/2} \approx -\ln f + 2G$.
+                    Let's use the explicit $P \propto e^{-2kL}$ directly.
+                    $\lambda \propto e^{-2kL}$
+                    $t_{1/2} \propto \frac{1}{\lambda} \propto e^{2kL}$
+                    So, $t_{1/2} = C_{norm} \cdot e^{\frac{2L}{\hbar}\sqrt{2m_\alpha(V_0-Q)}}$.
+                    Taking ratios:
+                    $$ \frac{t_{1/2,2}}{t_{1/2,1}} = \frac{e^{\frac{2L}{\hbar}\sqrt{2m_\alpha(V_0-Q_2)}}}{e^{\frac{2L}{\hbar}\sqrt{2m_\alpha(V_0-Q_1)}}} = e^{\frac{2L\sqrt{2m_\alpha}}{\hbar} (\sqrt{V_0-Q_2} - \sqrt{V_0-Q_1})} $$
+                    The term $\frac{2L\sqrt{2m_\alpha}}{\hbar}$ is a constant, let's call it $X$. We need to estimate its value.
+                    For the given $Q_1=5 \text{ MeV}$ and $V_0-Q_1=20 \text{ MeV}$, the exponent is $2G_1 \approx 39$.
+                    So $X \sqrt{20 \text{ MeV}} \approx 39$. This means $X \approx 39/\sqrt{20} \approx 39/4.472 \approx 8.72$.
+
+                    Now calculate the new exponent:
+                    $$ \Delta (\text{exponent}) = X (\sqrt{19.9} - \sqrt{20}) = 8.72 \times (4.4609 - 4.4721) $$
+                    $$ \Delta (\text{exponent}) = 8.72 \times (-0.0112) \approx -0.097664 $$
+                    So,
+                    $$ \frac{t_{1/2,2}}{t_{1/2,1}} = e^{-0.097664} \approx 0.9069 $$
+                    $$ t_{1/2,2} \approx 0.9069 \times 10^9 \text{ years} \approx 9.07 \times 10^8 \text{ years} $$
+                    <p>A $0.1 \text{ MeV}$ increase in Q-value results in the half-life decreasing from $10^9$ years to approximately $9.07 \times 10^8$ years. This is about a $9.3\%$ reduction for a small energy change, demonstrating the sensitivity.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script>
+        function toggleSolution(button) {
+            const solution = button.nextElementSibling;
+            if (solution.style.display === "block") {
+                solution.style.display = "none";
+                button.textContent = "Show Solution";
+            } else {
+                solution.style.display = "block";
+                button.textContent = "Hide Solution";
+            }
+        }
+    </script>
+    <footer>
+        <p>© 2023 Nuclear & Particle Physics Study Hub. Based on notes by Dr. Tanumoy Mandal.</p>
+    </footer>
+</body>
+</html>

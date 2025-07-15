@@ -1,0 +1,266 @@
+/* style.css */
+
+:root {
+    --primary-color: #0056b3; /* Dark Blue */
+    --secondary-color: #f8f9fa; /* Light Gray */
+    --text-color: #343a40; /* Dark Gray */
+    --accent-color: #28a745; /* Green */
+    --light-gray: #e9ecef; /* Lighter Gray */
+    --border-color: #dee2e6; /* Border Gray */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background-color: #343a40; /* Darker Gray for Nav */
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--primary-color);
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2, h3, h4 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    border-bottom-color: var(--border-color);
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    border-bottom: none;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 5px;
+}
+
+/* Specific styling for notes content */
+.lecture-content ul li {
+    list-style-type: disc;
+}
+
+.lecture-content ol li {
+    list-style-type: decimal;
+}
+
+.lecture-content p {
+    text-align: justify;
+}
+
+/* Collapsible sections for lectures and questions */
+details {
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 0;
+    color: var(--primary-color);
+}
+
+summary:hover {
+    color: var(--accent-color);
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.details-content {
+    padding-top: 10px;
+}
+
+/* Exam and Tutorial specific styling */
+.question-block {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.question-block h4 {
+    margin-top: 0;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+}
+
+.question-block ol {
+    list-style: lower-alpha;
+    margin-top: 10px;
+}
+
+.solution-toggle {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.solution-toggle:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.solution-content {
+    background-color: #f2fcf4; /* Lighter green background */
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    display: none; /* Hidden by default */
+}
+
+/* LaTeX specific styling (MathJax) */
+.lecture-content .MJX_Assistive_MathML {
+    border: none !important;
+}
+
+.lecture-content .MathJax {
+    font-size: 1.1em !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 0;
+    border: 1px solid transparent; /* To prevent collapse on details tag, if any */
+}
+
+.lecture-content pre {
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 30px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}

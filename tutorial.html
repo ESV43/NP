@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Nuclear & Particle Physics</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            "HTML-CSS": {preferredFont: "TeX", availableFonts: ["STIX","TeX"]},
+            CommonHTML: { matchFontHeight: false }
+        });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+    <header>
+        <h1>Nuclear & Particle Physics Notes</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lectures.html">Lectures</a></li>
+            <li><a href="tutorial.html" class="active">Tutorial</a></li>
+            <li><a href="exam.html">Exam</a></li>
+            <li><a href="net_questions.html">CSIR NET Style Questions</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Tutorial: Key Concepts & Practice Problems</h2>
+            <p>This tutorial is designed to reinforce your understanding of core concepts in Nuclear & Particle Physics. Each section reviews a key topic from the lectures and is followed by practice questions to test your comprehension. Detailed solutions are provided for self-assessment.</p>
+
+            <h3>Topic 1: Rutherford Scattering and Nuclear Size</h3>
+            <p>Rutherford's experiment provided the first evidence for the nuclear model of the atom. The differential cross-section for Rutherford scattering describes the probability of scattering an alpha particle at a given angle off a nucleus. The dependence on $Z^2$ and $\sin^{-4}(\Theta/2)$ are characteristic features. Electron scattering, with its smaller wavelength, allows us to probe the finite size and charge distribution of the nucleus, characterized by the form factor.</p>
+
+            <div class="question-block">
+                <h4>Tutorial Question 1 (5 Marks)</h4>
+                <p>An alpha particle ($Z_1=2$) with kinetic energy $5.0 \text{ MeV}$ is scattered by a gold nucleus ($Z_2=79$).</p>
+                <ol>
+                    <li>Calculate the distance of closest approach if the alpha particle is directed head-on towards the gold nucleus. (Given $e = 1.6 \times 10^{-19} \text{ C}$, $\epsilon_0 = 8.85 \times 10^{-12} \text{ F/m}$).</li>
+                    <li>If the Rutherford scattering cross-section for a scattering angle $\Theta = 60^\circ$ is $\sigma_0$, what would be the cross-section for $\Theta = 120^\circ$?</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Distance of Closest Approach ($r_m$)</strong></p>
+                    <p>For a head-on collision, all kinetic energy ($E$) is converted into electrostatic potential energy at the distance of closest approach ($r_m$).</p>
+                    $$ E = \frac{1}{4\pi\epsilon_0} \frac{Z_1 Z_2 e^2}{r_m} $$
+                    $$ r_m = \frac{1}{4\pi\epsilon_0} \frac{Z_1 Z_2 e^2}{E} $$
+                    Given: $Z_1 = 2$, $Z_2 = 79$, $e = 1.6 \times 10^{-19} \text{ C}$, $E = 5.0 \text{ MeV} = 5.0 \times 10^6 \times 1.6 \times 10^{-19} \text{ J}$.
+                    We know $\frac{1}{4\pi\epsilon_0} = 9 \times 10^9 \text{ N m}^2/\text{C}^2$.
+                    $$ r_m = (9 \times 10^9) \frac{2 \times 79 \times (1.6 \times 10^{-19})^2}{5.0 \times 10^6 \times 1.6 \times 10^{-19}} $$
+                    $$ r_m = \frac{9 \times 10^9 \times 2 \times 79 \times 1.6 \times 10^{-19}}{5.0 \times 10^6} $$
+                    $$ r_m = \frac{227.52 \times 10^{-10}}{5.0} = 45.504 \times 10^{-10} \text{ m} = 4.55 \times 10^{-14} \text{ m} = 45.5 \text{ fm} $$
+                    <p>The distance of closest approach is $45.5 \text{ fm}$.</p>
+
+                    <p><strong>Part (b): Scattering Cross-Section Ratio</strong></p>
+                    <p>The Rutherford scattering differential cross-section is given by:</p>
+                    $$ \frac{d\sigma}{d\Omega} \propto \frac{1}{\sin^4(\Theta/2)} $$
+                    Let $\sigma_1$ be the cross-section at $\Theta_1 = 60^\circ$ and $\sigma_2$ be at $\Theta_2 = 120^\circ$.
+                    We are given $\sigma_1 = \sigma_0$.
+                    $$ \frac{\sigma_2}{\sigma_1} = \frac{1/\sin^4(\Theta_2/2)}{1/\sin^4(\Theta_1/2)} = \frac{\sin^4(\Theta_1/2)}{\sin^4(\Theta_2/2)} $$
+                    For $\Theta_1 = 60^\circ$, $\Theta_1/2 = 30^\circ$, so $\sin(\Theta_1/2) = \sin(30^\circ) = 1/2$.
+                    For $\Theta_2 = 120^\circ$, $\Theta_2/2 = 60^\circ$, so $\sin(\Theta_2/2) = \sin(60^\circ) = \sqrt{3}/2$.
+                    $$ \frac{\sigma_2}{\sigma_0} = \frac{(1/2)^4}{(\sqrt{3}/2)^4} = \frac{1/16}{9/16} = \frac{1}{9} $$
+                    $$ \sigma_2 = \frac{\sigma_0}{9} $$
+                    <p>The cross-section for $\Theta = 120^\circ$ would be $\sigma_0/9$.</p>
+                </div>
+            </div>
+
+            <h3>Topic 2: Nuclear Binding Energy and Semi-Empirical Mass Formula (SEMF)</h3>
+            <p>The binding energy is the energy holding the nucleus together. It can be calculated from the mass defect. The Semi-Empirical Mass Formula (SEMF) provides a phenomenological description of nuclear binding energy, incorporating volume, surface, Coulomb, asymmetry, and pairing terms. Each term reflects a different aspect of the nuclear force and structure.</p>
+
+            <div class="question-block">
+                <h4>Tutorial Question 2 (5 Marks)</h4>
+                <p>Consider the contribution of the Coulomb term to the binding energy of a nucleus. Assume the nucleus is a uniformly charged sphere of radius $R = R_0 A^{1/3}$.</p>
+                <ol>
+                    <li>Derive the expression for the electrostatic self-energy of this uniformly charged sphere.</li>
+                    <li>Explain why the actual Coulomb term in SEMF uses $Z(Z-1)$ instead of $Z^2$.</li>
+                </ol>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Part (a): Electrostatic Self-Energy Derivation</strong></p>
+                    <p>The electrostatic self-energy $E_C$ of a uniformly charged sphere of total charge $Q$ and radius $R$ can be calculated by integrating the energy required to bring successive charge layers to the sphere.
+                    Consider building the sphere layer by layer. When the sphere has radius $r$ and charge $q = Q(r/R)^3$, the potential at its surface is $V(r) = \frac{1}{4\pi\epsilon_0} \frac{q}{r}$.
+                    The energy to add an infinitesimal charge $dq = Q \frac{3r^2}{R^3} dr$ is $dV = V(r) dq$.
+                    $$ dE_C = \frac{1}{4\pi\epsilon_0} \frac{Q(r/R)^3}{r} Q \frac{3r^2}{R^3} dr = \frac{1}{4\pi\epsilon_0} \frac{3Q^2}{R^6} r^4 dr $$
+                    Integrating from $r=0$ to $R$:
+                    $$ E_C = \int_0^R \frac{1}{4\pi\epsilon_0} \frac{3Q^2}{R^6} r^4 dr = \frac{1}{4\pi\epsilon_0} \frac{3Q^2}{R^6} \left[\frac{r^5}{5}\right]_0^R $$
+                    $$ E_C = \frac{1}{4\pi\epsilon_0} \frac{3Q^2}{R^6} \frac{R^5}{5} = \frac{3}{5} \frac{Q^2}{4\pi\epsilon_0 R} $$
+                    For a nucleus, $Q=Ze$. So, the electrostatic self-energy is:
+                    $$ E_C = \frac{3}{5} \frac{(Ze)^2}{4\pi\epsilon_0 R} $$
+                    <p>This is the expression for the electrostatic self-energy.</p>
+
+                    <p><strong>Part (b): Explanation for $Z(Z-1)$ term</strong></p>
+                    <p>The derivation in part (a) assumes the charge is a continuous distribution. However, in a nucleus, the charge is due to $Z$ discrete protons. The self-energy represents the total electrostatic energy of all pairs of protons interacting with each other. If we take any two distinct protons, say proton $i$ and proton $j$, they contribute to the total Coulomb energy.</p>
+                    <p>If there are $Z$ protons, the number of distinct pairs of protons is given by the combination formula $\binom{Z}{2} = \frac{Z(Z-1)}{2}$. Each pair contributes a Coulomb energy term. Therefore, the total Coulomb interaction energy should be proportional to the number of pairs, $Z(Z-1)/2$, rather than $Z^2/2$ (which would implicitly include a "self-interaction" of each proton with itself, which is not physical in this context).</p>
+                    <p>The electrostatic energy of a single proton interacting with the field created by the other $(Z-1)$ protons. Summing over all $Z$ protons, we get $Z(Z-1)$ pairwise interactions. Thus, the actual Coulomb term is proportional to $Z(Z-1)$.</p>
+                </div>
+            </div>
+
+            <h3>Topic 3: Nuclear Shell Model and Magic Numbers</h3>
+            <p>The nuclear shell model explains the enhanced stability of nuclei with "magic numbers" of protons or neutrons. It treats nucleons as independent particles in an average potential. The inclusion of a strong spin-orbit coupling term is crucial for correctly reproducing all observed magic numbers by splitting degenerate energy levels and creating significant energy gaps.</p>
+
+            <div class="question-block">
+                <h4>Tutorial Question 3 (5 Marks)</h4>
+                <p>Explain why the simple harmonic oscillator potential fails to predict all the nuclear magic numbers, and how the inclusion of spin-orbit coupling resolves this discrepancy. Specifically, discuss the $N=3$ harmonic oscillator shell and its contribution to magic numbers.</p>
+                <button class="solution-toggle" onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution-content">
+                    <h4>Solution:</h4>
+                    <p><strong>Failure of Simple Harmonic Oscillator (HO) Potential:</strong></p>
+                    <p>The simple 3D isotropic harmonic oscillator potential gives energy levels $E_N = \hbar\omega(N + 3/2)$, where $N = 2(n-1) + l$. The degeneracies are calculated from the number of combinations of $(n,l)$ for a given $N$.</p>
+                    <ul>
+                        <li>$N=0$: $1s$ (2 nucleons). Cumulative: 2. (Matches magic number)</li>
+                        <li>$N=1$: $1p$ (6 nucleons). Cumulative: 8. (Matches magic number)</li>
+                        <li>$N=2$: $2s, 1d$ (2+10=12 nucleons). Cumulative: 20. (Matches magic number)</li>
+                        <li>$N=3$: $2p, 1f$ (6+14=20 nucleons). Cumulative: 40. (<strong>Does NOT match 28 or 50</strong>)</li>
+                    </ul>
+                    <p>The simple HO model predicts magic numbers 2, 8, 20, but then deviates, predicting 40 instead of 28 or 50. The energy gaps between shells are not large enough or are in the wrong places to account for the higher magic numbers.</p>
+
+                    <p><strong>Resolution by Spin-Orbit Coupling:</strong></p>
+                    <p>The discrepancy is resolved by introducing a strong spin-orbit coupling term to the nuclear potential: $H_{SO} = f \vec{L} \cdot \vec{S}$, where $f$ is a negative constant ($f < 0$). This term splits the energy levels based on the total angular momentum $j = l \pm 1/2$.</p>
+                    <p>The energy shift for a given $(l, s=1/2)$ state is $\Delta E_{SO} = f \frac{\hbar^2}{2} [j(j+1) - l(l+1) - s(s+1)]$.</p>
+                    <ul>
+                        <li>For $j = l + 1/2$: $\langle \vec{L} \cdot \vec{S} \rangle = \frac{\hbar^2 l}{2}$. The energy correction is $f \frac{\hbar^2 l}{2}$. Since $f<0$, this state is lowered in energy.</li>
+                        <li>For $j = l - 1/2$: $\langle \vec{L} \cdot \vec{S} \rangle = -\frac{\hbar^2 (l+1)}{2}$. The energy correction is $-f \frac{\hbar^2 (l+1)}{2}$. Since $f<0$, this state is raised in energy.</li>
+                    </ul>
+                    <p>This means states with higher $j$ (which are $l+1/2$) are lowered in energy, and states with lower $j$ (which are $l-1/2$) are raised in energy. The magnitude of this splitting increases with $l$.</p>
+
+                    <p><strong>$N=3$ Harmonic Oscillator Shell Example:</strong></p>
+                    <p>The $N=3$ shell consists of $2p$ ($l=1$) and $1f$ ($l=3$) orbitals.</p>
+                    <ul>
+                        <li>For $2p$ ($l=1$):
+                            <ul>
+                                <li>$2p_{3/2}$ (degeneracy 4): lowered in energy.</li>
+                                <li>$2p_{1/2}$ (degeneracy 2): raised in energy.</li>
+                            </ul>
+                        </li>
+                        <li>For $1f$ ($l=3$):
+                            <ul>
+                                <li>$1f_{7/2}$ (degeneracy 8): lowered significantly in energy (due to large $l=3$).</li>
+                                <li>$1f_{5/2}$ (degeneracy 6): raised in energy.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>The crucial effect is the large downward shift of the $1f_{7/2}$ state. This state effectively drops into the shell *below* the N=3 shell, creating a new, larger energy gap. The nucleons filling up to the $1d_{3/2}$ and $2s_{1/2}$ (from N=2 shell) account for 20 nucleons. When $1f_{7/2}$ (8 nucleons) drops, it adds to this count, creating a closed shell at $20+8 = 28$ nucleons, which is the next magic number.</p>
+                    <p>Subsequent high-$l$, high-$j$ states (like $1g_{9/2}$ from $N=4$ shell) also drop significantly, creating gaps at 50, 82, and 126, thus explaining all observed magic numbers.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script>
+        function toggleSolution(button) {
+            const solution = button.nextElementSibling;
+            if (solution.style.display === "block") {
+                solution.style.display = "none";
+                button.textContent = "Show Solution";
+            } else {
+                solution.style.display = "block";
+                button.textContent = "Hide Solution";
+            }
+        }
+    </script>
+    <footer>
+        <p>© 2023 Nuclear & Particle Physics Study Hub. Based on notes by Dr. Tanumoy Mandal.</p>
+    </footer>
+</body>
+</html>
